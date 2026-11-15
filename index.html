@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <title>World Clock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div>
+        <p class="eyebrow">TIME AROUND THE WORLD</p>
+        <h1>World Clock</h1>
+        <p class="subtitle">Your cities, one glance away.</p>
+      </div>
+      <div class="live-indicator"><span></span> LIVE</div>
+    </header>
+
+    <section class="clock-grid" aria-label="World clocks">
+      <article class="clock-card" data-timezone="America/New_York">
+        <div class="card-top"><span class="flag">🇺🇸</span><span class="region">NORTH AMERICA</span></div>
+        <h2>United States</h2><p class="city">New York · Eastern Time</p>
+        <time class="clock-time">--:--:--</time><p class="date">Loading date…</p>
+      </article>
+
+      <article class="clock-card" data-timezone="Europe/London">
+        <div class="card-top"><span class="flag">🇬🇧</span><span class="region">EUROPE</span></div>
+        <h2>United Kingdom</h2><p class="city">London · UK Time</p>
+        <time class="clock-time">--:--:--</time><p class="date">Loading date…</p>
+      </article>
+
+      <article class="clock-card" data-timezone="Australia/Sydney">
+        <div class="card-top"><span class="flag">🇦🇺</span><span class="region">OCEANIA</span></div>
+        <h2>Australia</h2><p class="city">Sydney · Australian Eastern Time</p>
+        <time class="clock-time">--:--:--</time><p class="date">Loading date…</p>
+      </article>
+
+      <article class="clock-card featured" data-timezone="Asia/Kolkata">
+        <div class="card-top"><span class="flag">🇮🇳</span><span class="region">YOUR HOME TIME</span></div>
+        <h2>India</h2><p class="city">New Delhi · India Standard Time</p>
+        <time class="clock-time">--:--:--</time><p class="date">Loading date…</p>
+      </article>
+
+      <article class="clock-card" data-timezone="Asia/Shanghai">
+        <div class="card-top"><span class="flag">🇨🇳</span><span class="region">ASIA</span></div>
+        <h2>China</h2><p class="city">Shanghai · China Standard Time</p>
+        <time class="clock-time">--:--:--</time><p class="date">Loading date…</p>
+      </article>
+
+      <article class="clock-card" data-timezone="Europe/Budapest">
+        <div class="card-top"><span class="flag">🇭🇺</span><span class="region">EUROPE</span></div>
+        <h2>Hungary</h2><p class="city">Budapest · Central European Time</p>
+        <time class="clock-time">--:--:--</time><p class="date">Loading date…</p>
+      </article>
+    </section>
+
+    <footer>Times update automatically · Adjusts for daylight saving time</footer>
+  </main>
+
+  <script>
+    const clockCards = document.querySelectorAll(".clock-card");
+
+    function updateClocks() {
+      const now = new Date();
+
+      clockCards.forEach((card) => {
+        const timezone = card.dataset.timezone;
+        const time = new Intl.DateTimeFormat("en-GB", {
+          timeZone: timezone,
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: false
+        }).format(now);
+
+        const date = new Intl.DateTimeFormat("en-US", {
+          timeZone: timezone,
+          weekday: "long",
+          day: "numeric",
+          month: "long",
+          year: "numeric"
+        }).format(now);
+
+        card.querySelector(".clock-time").textContent = time;
+        card.querySelector(".date").textContent = date;
+      });
+    }
+
+    updateClocks();
+    setInterval(updateClocks, 1000);
+  </script>
+</body>
+</html>
