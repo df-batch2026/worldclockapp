@@ -300,3 +300,34 @@ footer {
         --face-size: 200px;
     }
 }
+
+.clock-card,
+.clock-card.featured {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 25px 10px !important;
+}
+
+.clock-card:hover {
+    transform: none !important;
+    border-color: transparent !important;
+}
+
+/* Make the round clock stand out */
+.clock-face {
+    border-radius: 50% !important;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+}
+
+/* Keep clocks centered */
+.clock-grid {
+    align-items: center;
+}
+
+.clock-card {
+    text-align: center;
+}
