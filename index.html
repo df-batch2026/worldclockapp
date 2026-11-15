@@ -1,190 +1,168 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#101827">
-    <title>My Clock</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#24170f">
+  <title>Vishwa Samay | World Clock</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<main class="app">
-
+  <div class="page-pattern" aria-hidden="true"></div>
+  <main class="app">
     <header class="header">
-        <div>
-            <p class="eyebrow">TIME AROUND THE WORLD</p>
-            <h1>World Clock</h1>
-            <p class="subtitle">Six cities. One glance around the world.</p>
-        </div>
-        <div class="live-indicator">
-            <span></span> LIVE
-        </div>
+      <div class="brand-mark" aria-hidden="true">ॐ</div>
+      <div class="heading">
+        <p class="eyebrow">वसुधैव कुटुम्बकम् · THE WORLD IS ONE FAMILY</p>
+        <h1>Vishwa <span>Samay</span></h1>
+        <p class="subtitle">A world of time, inspired by India.</p>
+      </div>
+      <div class="live-indicator"><span></span> LIVE</div>
     </header>
 
-    <section class="clock-grid">
+    <div class="section-heading">
+      <span class="section-line"></span>
+      <span>TIME AROUND THE WORLD</span>
+      <span class="section-line"></span>
+    </div>
 
-        <!-- <article class="clock-card" data-timezone="America/New_York">
-            <div class="clock-face">
-                <div class="clock-numbers"></div>
-                <div class="hand hour-hand"></div>
-                <div class="hand minute-hand"></div>
-                <div class="hand second-hand"></div>
-                <div class="pin"></div>
-            </div>
-            <h2>🇺🇸 United States</h2>
-            <p class="city">New York · Eastern Time</p>
-            <p class="digital-time">--:--:--</p>
-        </article> -->
+    <section class="clock-grid" aria-label="World clocks">
+      <article class="clock-card" data-timezone="America/New_York">
+        <div class="clock-face" aria-label="Analog clock for New York">
+          <div class="clock-numbers"></div>
+          <div class="hand hour-hand"></div><div class="hand minute-hand"></div>
+          <div class="hand second-hand"></div><div class="pin"></div>
+        </div>
+        <h2>🇺🇸 United States</h2>
+        <p class="city">New York · Eastern Time</p>
+        <p class="digital-time">--:--:--</p>
+      </article>
 
-        <article class="clock-card" data-timezone="Europe/London">
-            <div class="clock-face">
-                <div class="clock-numbers"></div>
-                <div class="hand hour-hand"></div>
-                <div class="hand minute-hand"></div>
-                <div class="hand second-hand"></div>
-                <div class="pin"></div>
-            </div>
-            <h2>🇬🇧 United Kingdom</h2>
-            <p class="city">London · UK Time</p>
-            <p class="digital-time">--:--:--</p>
-        </article>
+      <article class="clock-card" data-timezone="Europe/London">
+        <div class="clock-face" aria-label="Analog clock for London">
+          <div class="clock-numbers"></div>
+          <div class="hand hour-hand"></div><div class="hand minute-hand"></div>
+          <div class="hand second-hand"></div><div class="pin"></div>
+        </div>
+        <h2>🇬🇧 United Kingdom</h2>
+        <p class="city">London · UK Time</p>
+        <p class="digital-time">--:--:--</p>
+      </article>
 
-        <article class="clock-card" data-timezone="Australia/Sydney">
-            <div class="clock-face">
-                <div class="clock-numbers"></div>
-                <div class="hand hour-hand"></div>
-                <div class="hand minute-hand"></div>
-                <div class="hand second-hand"></div>
-                <div class="pin"></div>
-            </div>
-            <h2>🇦🇺 Australia</h2>
-            <p class="city">Sydney · Australian Eastern Time</p>
-            <p class="digital-time">--:--:--</p>
-        </article>
+      <article class="clock-card" data-timezone="Australia/Sydney">
+        <div class="clock-face" aria-label="Analog clock for Sydney">
+          <div class="clock-numbers"></div>
+          <div class="hand hour-hand"></div><div class="hand minute-hand"></div>
+          <div class="hand second-hand"></div><div class="pin"></div>
+        </div>
+        <h2>🇦🇺 Australia</h2>
+        <p class="city">Sydney · Australian Eastern Time</p>
+        <p class="digital-time">--:--:--</p>
+      </article>
 
-        <article class="clock-card featured" data-timezone="Asia/Kolkata">
-            <div class="clock-face">
-                <div class="clock-numbers"></div>
-                <div class="hand hour-hand"></div>
-                <div class="hand minute-hand"></div>
-                <div class="hand second-hand"></div>
-                <div class="pin"></div>
-            </div>
-            <h2>🇮🇳 India</h2>
-            <p class="city">New Delhi · India Standard Time</p>
-            <p class="digital-time">--:--:--</p>
-        </article>
+      <article class="clock-card featured" data-timezone="Asia/Kolkata">
+        <div class="india-ribbon">भारत · INDIA</div>
+        <div class="clock-face" aria-label="Analog clock for India">
+          <div class="clock-numbers"></div>
+          <div class="hand hour-hand"></div><div class="hand minute-hand"></div>
+          <div class="hand second-hand"></div><div class="pin"></div>
+        </div>
+        <h2>🇮🇳 India</h2>
+        <p class="city">New Delhi · India Standard Time</p>
+        <p class="digital-time">--:--:--</p>
+      </article>
 
-        <article class="clock-card" data-timezone="Asia/Shanghai">
-            <div class="clock-face">
-                <div class="clock-numbers"></div>
-                <div class="hand hour-hand"></div>
-                <div class="hand minute-hand"></div>
-                <div class="hand second-hand"></div>
-                <div class="pin"></div>
-            </div>
-            <h2>🇨🇳 China</h2>
-            <p class="city">Shanghai · China Standard Time</p>
-            <p class="digital-time">--:--:--</p>
-        </article>
+      <article class="clock-card" data-timezone="Asia/Shanghai">
+        <div class="clock-face" aria-label="Analog clock for Shanghai">
+          <div class="clock-numbers"></div>
+          <div class="hand hour-hand"></div><div class="hand minute-hand"></div>
+          <div class="hand second-hand"></div><div class="pin"></div>
+        </div>
+        <h2>🇨🇳 China</h2>
+        <p class="city">Shanghai · China Standard Time</p>
+        <p class="digital-time">--:--:--</p>
+      </article>
 
-        <article class="clock-card" data-timezone="Europe/Budapest">
-            <div class="clock-face">
-                <div class="clock-numbers"></div>
-                <div class="hand hour-hand"></div>
-                <div class="hand minute-hand"></div>
-                <div class="hand second-hand"></div>
-                <div class="pin"></div>
-            </div>
-            <h2>🇭🇺 Hungary</h2>
-            <p class="city">Budapest · Central European Time</p>
-            <p class="digital-time">--:--:--</p>
-        </article>
-
+      <article class="clock-card" data-timezone="Europe/Budapest">
+        <div class="clock-face" aria-label="Analog clock for Budapest">
+          <div class="clock-numbers"></div>
+          <div class="hand hour-hand"></div><div class="hand minute-hand"></div>
+          <div class="hand second-hand"></div><div class="pin"></div>
+        </div>
+        <h2>🇭🇺 Hungary</h2>
+        <p class="city">Budapest · Central European Time</p>
+        <p class="digital-time">--:--:--</p>
+      </article>
     </section>
 
     <footer>
-        Classic Analog Clocks · Live Local Times · Daylight-Saving Aware
+      <span class="footer-ornament">✦</span>
+      समय अनमोल है · TIME IS PRECIOUS
+      <span class="footer-ornament">✦</span>
+      <p>Local times update every second · Daylight-saving aware</p>
     </footer>
+  </main>
 
-</main>
+  <script>
+    const clockCards = document.querySelectorAll(".clock-card");
 
-<script>
-const clockCards = document.querySelectorAll(".clock-card");
-
-// Generate clock numbers
-clockCards.forEach(card => {
-    const numbers = card.querySelector(".clock-numbers");
-
-    for (let i = 1; i <= 12; i++) {
+    // Place the 12 numerals around each dial.
+    clockCards.forEach(card => {
+      const numbers = card.querySelector(".clock-numbers");
+      for (let i = 1; i <= 12; i++) {
         const numeral = document.createElement("span");
-
         numeral.className = "numeral";
         numeral.textContent = i;
         numeral.style.setProperty("--angle", `${i * 30}deg`);
-
         numbers.appendChild(numeral);
-    }
-});
+      }
+    });
 
-// Get timezone-specific time
-function getTimeParts(date, timeZone) {
-    const parts = new Intl.DateTimeFormat("en-GB", {
+    function getTimeParts(date, timeZone) {
+      const parts = new Intl.DateTimeFormat("en-GB", {
         timeZone,
         hour: "2-digit",
         minute: "2-digit",
         second: "2-digit",
         hourCycle: "h23"
-    }).formatToParts(date);
+      }).formatToParts(date);
 
-    return Object.fromEntries(
+      return Object.fromEntries(
         parts.map(part => [part.type, Number(part.value)])
-    );
-}
+      );
+    }
 
-// Update all clocks
-function updateClocks() {
-    const now = new Date();
+    function updateClocks() {
+      const now = new Date();
 
-    clockCards.forEach(card => {
+      clockCards.forEach(card => {
         const timezone = card.dataset.timezone;
+        const { hour, minute, second } = getTimeParts(now, timezone);
 
-        const { hour, minute, second } =
-            getTimeParts(now, timezone);
-
-        const hourAngle =
-            ((hour % 12) + minute / 60 + second / 3600) * 30;
-
-        const minuteAngle =
-            (minute + second / 60) * 6;
-
+        const hourAngle = ((hour % 12) + minute / 60 + second / 3600) * 30;
+        const minuteAngle = (minute + second / 60) * 6;
         const secondAngle = second * 6;
 
         card.querySelector(".hour-hand").style.transform =
-            `translateX(-50%) rotate(${hourAngle}deg)`;
-
+          `translateX(-50%) rotate(${hourAngle}deg)`;
         card.querySelector(".minute-hand").style.transform =
-            `translateX(-50%) rotate(${minuteAngle}deg)`;
-
+          `translateX(-50%) rotate(${minuteAngle}deg)`;
         card.querySelector(".second-hand").style.transform =
-            `translateX(-50%) rotate(${secondAngle}deg)`;
+          `translateX(-50%) rotate(${secondAngle}deg)`;
 
         card.querySelector(".digital-time").textContent =
-            new Intl.DateTimeFormat("en-GB", {
-                timeZone: timezone,
-                hour: "2-digit",
-                minute: "2-digit",
-                second: "2-digit",
-                hour12: false
-            }).format(now);
-    });
-}
+          new Intl.DateTimeFormat("en-GB", {
+            timeZone: timezone,
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: false
+          }).format(now);
+      });
+    }
 
-updateClocks();
-setInterval(updateClocks, 1000);
-</script>
-
+    updateClocks();
+    setInterval(updateClocks, 1000);
+  </script>
 </body>
 </html>
